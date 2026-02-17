@@ -15,7 +15,7 @@ const login = async () => {
     email: email.value,
     password: password.value
   })
-  router.push('/tasks')
+  router.push('/home')
 }
 </script>
 

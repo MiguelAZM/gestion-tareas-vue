@@ -1,0 +1,42 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #1c1919;
+  color: #fff;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-button:hover {
+  background-color: #0056b3;
+}
+
+.tasks-section {
+  flex: 1;
+  padding: 20px;
+}
+.sidebar-button.logout-button {
+  background-color: #dc3545;
+}
+
+.sidebar-button.logout-button:hover {
+  background-color: #a71d2a;
+}
