@@ -5,6 +5,7 @@ import api from '@/services/api'
 export function useTasks() {
   const tasks = ref([])
   const title = ref('')
+  const  description = ref('')
   const expiration_date = ref('')
   const justification = ref('')
 
@@ -16,9 +17,11 @@ export function useTasks() {
   const createTask = async () => {
     await api.post('/tasks', {
       title: title.value,
+      description: description.value,
       expiration_date: expiration_date.value
     })
     title.value = ''
+    description.value = ''
     expiration_date.value = ''
     fetchTasks()
   }
@@ -26,6 +29,7 @@ export function useTasks() {
   const updateTask = async (task) => {
     await api.put(`/tasks/${task.id}`, {
       title: task.title,
+      description:task.description,
       expiration_date: task.expiration_date
     })
     fetchTasks()
@@ -53,6 +57,7 @@ export function useTasks() {
   return {
     tasks,
     title,
+    description,
     expiration_date,
     justification,
     fetchTasks,
