@@ -1,44 +1,55 @@
 # gestion-tareas-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Este proyecto es un frontend en Vue 3 para la gestion de tareas, conectado a un backend en Laravel.
+Incluye autenticación, dashboard con sidebar, listado de tareas con paginacion, modales para CRUD .
 
-## Recommended IDE Setup
+---
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+##  Tecnologias utilizadas
 
-## Recommended Browser Setup
+- node.js (20:19+)
+- [Vue 3] con `<script setup>`
+- [Pinia] para el manejo de estado global
+- [Vue Router] para navegación
+- [Axios] para llamadas HTTP al backend
+- [Laravel] como API backend
+- CSS personalizado para estilos (inspirado en login/dashboard)
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+  
+##  Estructura principal
+src/ ├─ assets/ │   └─ styles/home.css         │   └─ useTasks.js            # Composable para CRUD de tareas ├─ stores/ │   └─ auth.js                # Store de autenticación (Pinia) ├─ views/ │   └─ HomeView.vue           # Vista principal con sidebar, tabla y modales └─ router/ └─ index.js               # 
 
-## Customize configuration
+**Autenticación** con Pinia y router guard.
+- **Sidebar (`<nav>`)** con botones:
+  - 📋 Ver tareas
+  - 📊 Estadísticas
+  - 🚪 Cerrar sesión
+- **Listado de tareas** en tabla con columnas:
+  - Título
+  - Descripción
+  - Fecha de expiración
+  - Estado (Pendiente / Completada)
+  - Acciones (Actualizar, Completar con justificación, Eliminar)
+- **Modales embellecidos** para:
+  - Crear tarea
+  - Actualizar tarea
+  - Completar tarea con justificación
+- **Eliminar directo** sin modal.
+- **Paginación** en listado de tareas (5 por página).
+- **Estadísticas**: total de tareas, completadas y pendientes.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Instalación y ejecución
 
-## Project Setup
+1. Clonar el repositorio:
 
-```sh
+bash
+git clone https://github.com/MiguelAZM/gestion-tareas-vue.git
+cd task-manager-frontend
+2. Instalar dependencias:
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+3-Ejecutar en modo desarrollo:
 npm run dev
-```
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
